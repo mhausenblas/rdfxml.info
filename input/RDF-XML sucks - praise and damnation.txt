@@ -1,0 +1,200 @@
+Ora Lassila – Co-inventor of RDF
+
+I think we used to say "It's the Model, stupid"… […] I originally fought hard to make the RDF syntax *not* use XML, because it seemed obvious that most XML tools were not going to be terribly helpful.
+
+http://www.thefigtrees.net/lee/blog/2007/01/who_loves_rdfxml.html#comment-16783 (2007)
+
+
+Ora Lassila – Co-inventor of RDF
+
+I think it was a mistake to use XML as RDF's syntax. It seems to have created more confusion than good. Early on when designing RDF I advocated an s-expression-based syntax, because it would not be as verbose as XML, it would have been easier to write (really), and most importantly, I didn't think there were any real benefits to using XML. It was not meant to be, though, and eventually I got voted down. […] XML syntax for RDF is a political design decision, not a technical one.
+
+http://www.lassila.org/blog/archive/2005/05/xml_considered.html (2005)
+
+
+Tim Bray – Co-inventor of XML
+
+RDF has ignored what I consider to be the central lesson of the World Wide Web, the “View Source” lesson. […] I have never actually managed to write down a chunk of RDF/XML correctly, even when I had the triples laid out quite clearly in my head. Furthermore—once again speaking for myself—I find most existing RDF/XML entirely unreadable. […] I don't think anyone needs to feel particularly bad about this failed experiment.
+
+http://www.tbray.org/ongoing/When/200x/2003/05/21/RDFNet (2003)
+
+
+Dave Beckett – Former editor of RDF/XML
+
+The fundamental problem I think with using XML to write down graphs is: People looking at XML expect they are looking at a hierarchical Tree. So writing a Graph in an XML Tree is just going to always fail the simplicity test.
+
+http://journal.dajobe.org/journal/posts/2010/01/24/rdf-syntaxes-2-0/ (2010)
+
+
+Andy Seaborne – Co-Editor of SPARQL
+
+Q: What do you dislike about RDF? A: RDF/XML. 
+
+http://www.w3.org/2002/09/wbs/1/rdf-2010/results (2010)
+
+
+Bob DuCharme – Author of “Learning SPARQL” (O'Reilly)
+
+I like to say that there are two categories of people who don't like RDF/XML: RDF people and XML people.
+
+http://answers.semanticweb.com/questions/12308/how-do-i-convince-trainees-to-not-waste-another-second-on-rdfxml?page=1#12311 (2011)
+
+
+Richard Cyganiak – Co-Editor of RDF Concepts and Abstract Syntax
+
+RDF/XML combines the efficiency of a text format with the readability of a binary format.
+
+http://twitter.com/cygri/statuses/129911047825014784 (2011)
+
+
+Jeremy J. Carroll – Former editor of RDF Concepts and Abstract Syntax
+
+While many syntactic problems have been fixed [in RDF/XML], some of the ‘postponed issues’ indicate the extent of the original mess: e.g. ‘RDF embedded in XHTML and other XML documents is hard [i.e. impossible] to validate.’ and ‘it is not possible to define a subset of RDF/XML that can represent all RDF graphs and can be described by an DTD or an XML Schema’.
+In brief, RDF/XML does not layer RDF on top of XML in a useful way.
+
+http://delivery.acm.org/10.1145/1020000/1013501/p412-carroll.pdf (2004)
+
+
+Jonathan Rees – W3C Technical Architecture Group
+
+The world would be a better place if we could deprecate RDF/XML.
+
+http://lists.w3.org/Archives/Public/www-tag/2010Sep/0037.html (2010)
+
+
+Roy Fielding – Editor of HTTP 1.1 and inventor of REST
+
+If you don't want to get dirty then don't live in
+a pig's sty. There are plenty of non-XML ways to represent RDF.
+
+http://lists.w3.org/Archives/Public/www-tag/2010Jul/0021.html (2010)
+
+
+Sam Ruby, Co-chair of W3C HTML Working Group
+
+I have to believe that at one point, Dave Becket looked at the 1999 RDF Model and Syntax Specification and thought to himself, "I bet I can make this better".
+
+http://intertwingly.net/blog/2003/08/16/RDF-XML-Working-Draft-feedback#c1061086705 (2003)
+
+
+Manu Sporny – Editor of RDFa
+
+I'd be happy if RDF/XML were burned at the stake.
+
+http://www.w3.org/2002/09/wbs/1/rdf-2010/results (2010)
+
+It takes a deep understanding of RDF to understand why it's powerful and that knowledge isn't being distributed in a way that is good and efficient. Part of the blame is probably because of the RDF/XML serialization format - which is often associated as one and the same with RDF.
+
+http://www.w3.org/2002/09/wbs/1/rdf-2010/results (2010)
+
+
+Ivan Herman – W3C Semantic Web Activity Lead (according to Richard Cyganiak)
+
+Yes, RDF/XML is ugly because it was developed in the “prehistory” of XML, and now there’s too much legacy code to change it. If you prefer, use Turtle.
+
+http://richard.cyganiak.de/blog/2006/09/bxmlt-ivan-herman-–-questions-and-answers-on-the-semantic-web/ (2006)
+
+
+Ivan Herman – W3C Semantic Web Activity Lead
+
+One thing is sure: encoding OWL in RDF/XML is definitely not the way to go.
+
+http://answers.semanticweb.com/questions/11106/whats-a-good-owl-syntax?page=1#11162 (2011)
+
+
+Michael Hausenblas – Co-chair of W3C RDB2RDF Working Group
+
+RDF/XML as the standard and default serialization has harmed adoption of RDF since it is difficult to teach and hides the abstract model.
+
+http://www.w3.org/2002/09/wbs/1/rdf-2010/results (2010)
+
+
+John F. Sowa - Inventor of Conceptual Graphs
+
+The original RDF/XML was a disaster for humans and for computers.
+It is horribly inefficient for computation, and the native XML
+tools that process it are too slow for critical applications.
+For that reason, its adoption rate has been glacially slow.
+
+http://ontolog.cim3.net/forum/ontolog-forum/2011-12/msg00025.html (2011)
+
+
+Jeen Boekstra – Co-creator of Sesame
+
+One of the things (in my experience) that most often puts newcomers off RDF is the unreadable RDF/XML syntax.
+
+http://www.w3.org/2002/09/wbs/1/rdf-2010/results (2010)
+
+
+Paul A. Houle, Generation Five
+
+I'm training a group of people on RDF technology. I need to be very efficiently get them up to speed on Turtle, but most important make sure they don't waste any time with RDF/XML […] Personally when I think of working with RDF/XML I think it's like putting my hand in a toilet.
+
+http://answers.semanticweb.com/questions/12308/how-do-i-convince-trainees-to-not-waste-another-second-on-rdfxml (2011)
+
+
+Scott Henninger, TopQuadrant
+
+In our TQ training series, we stopped using RDF/XML for pedagogical purposes 3-4 years ago. Having to explain rdf:about, rdf:ID, etc. was such a waste of valuable time, and did little to help trainees understand how semantic technology works and can be utilized. We re-centered the training to focus on the RDF model, as @bobdc suggests, and found this to be much more effective. A mantra I use is "Once you understand that it's all about the triples, the rest will become easier." Turtle represents the triples directly. RDF/XML obfuscates the triples (by necessity of fitting a square peg, tree structures, into a triangular hole, RDF triples).
+
+http://answers.semanticweb.com/questions/12308/how-do-i-convince-trainees-to-not-waste-another-second-on-rdfxml (2011)
+
+
+Jans Aasman, Franz Inc.
+
+We should get rid of RDF/XML. Turtle and N-Triples are good enough.
+
+http://www.w3.org/2002/09/wbs/1/rdf-2010/results (2010)
+
+
+Benjamin Nowack, Talis
+
+One of the (IMO) most destructive SemWeb misconceptions is the 
+"RDF = RDF/XML" one.
+
+http://lists.w3.org/Archives/Public/public-sweo-ig/2007Jan/0022.html (2007)
+
+
+Henry Story – Inventor of WebID
+
+RDF/XML got people to confuse the syntax with the semantics. […] Also RDF/XML is just too difficult for people to understand. It would be much better if all formal documents used the Turlte notation (N3 if graphs are required) to explain things together with graph notations. The simplicity of the concepts are just lost in the RDF/XML notation.
+
+http://www.w3.org/2002/09/wbs/1/rdf-2010/results (2010)
+
+
+Pierre-Antoine Champin, Associate Professor at University Claude Bernard, Lyon
+
+I found that the XML syntax of RDF is a real hindrance to people understanding and adopting RDF in general. Turtle, on the other hand, is easy to grasp and understand.
+
+http://www.w3.org/2002/09/wbs/1/rdf-2010/results (2010)
+
+
+Aidan Hogan, DERI
+
+When I started learning RDF, someone told me "start with reading up on XML, and then check out RDF/XML, and write yourself a FOAF file". Worst. Advice. Ever. Took me about a month until I discovered N-Triples/Turtle and realised that RDF had something to do with triples.
+
+http://answers.semanticweb.com/questions/1837/common-semantic-web-misconceptions-youve-encountered (2010)
+
+
+Niklas Lindström, Valtech
+
+I fear RDF/XML as it stands has too much shortcomings, especially for general adoption (it's basically one of the most alien XML syntaxes people ever see). It should be frozen as it is, and perhaps even be declared a legacy format.
+
+http://www.w3.org/2002/09/wbs/1/rdf-2010/results (2010)
+
+
+Alexander Johannesen, software engineer
+
+RDF/XML sucks big time, not because machines can't figure it out, but because I can't figure it out.
+
+http://www.dehora.net/journal/2004/03/rdfx_rdf_xml_serialization.html#comment-1171 (2004)
+
+
+Sir Tim Berners-Lee – Inventor of the World Wide Web and Director of W3C
+
+<mhausenblas> this whole RDF/XML thing threw us back for years, IMHO
+<timbl> yes, indeed, and Martin Nally made that point forcefully at the workshop on linked enterprise data, that putting your XML mindset on makes you take many years extra, as you are reading everying with XML glasses and just not getting it.
+<timbl> So, he said just use turtle
+<timbl>	which I agree with.
+
+http://chatlogs.planetrdf.com/swig/2012-02-06.html#T15-19-01-1 (2012)

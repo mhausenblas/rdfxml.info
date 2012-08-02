@@ -1,0 +1,31 @@
+http://chatlogs.planetrdf.com/swig/2012-02-06.html#T15-09-52
+
+15:09:52	<mhausenblas>	cygri pointed out http://www.lassila.org/blog/archive/2005/05/xml_considered.html today to me
+15:10:17	<mhausenblas>	this whole RDF/XML thing threw us back for years, IMHO
+15:10:39	<mhausenblas>	with JSON we have something developers can be very productive
+15:11:45	<mhausenblas>	I find the overall message: let's base RDF on the XML stack a complete nonsense and wished Ora would have pulled through
+...
+15:19:01	<timbl>	"this whole RDF/XML thing threw us back for years, IMHO" -- yes, indeed, and Martin Nally made that point forcefully at the workshop on linked enterprise data, that putting your XML mindset on makes you take many years extra, as you are reading everying with XML glasses and just not getting it.
+15:19:13	<timbl>	So, he said just use turtle
+15:19:17	<timbl>	which I agree with.
+...
+15:39:18	<bblfish>	because the RDF/XML confuses people
+15:39:23	<mhausenblas>	no!
+15:39:34	<mhausenblas>	people love it. for breakfast, lunch and dinner
+15:39:35	<mhausenblas>	:P
+15:39:57	<mhausenblas>	is that cygri behind me on the floor?
+15:40:41		* cygri doesn't know what's worse, RDF/XML or mhausenblas' jokes
+15:40:49		* cygri runs
+15:40:50		* nevali grins
+15:40:53	<mhausenblas>	certainly my jokes
+15:41:10	<mhausenblas>	you can run, cygri - but not hide. and REST assured, I GET you :P
+15:41:17	<bblfish>	:D
+15:41:25		* nevali winces
+15:41:35		* rszeno try HEAD first
+15:41:41	<mhausenblas>	ROTFL
+15:41:44	<timbl>	no your jokes are not that bad
+15:42:00		* mhausenblas totally forgot how entertaining swig is ;)
+15:42:21	<mhausenblas>	thanks timbl, that means much to me (when you say it) ... but you didn't hear my CORS joke from yesterday
+15:42:24	<timbl>	compared with rdf/xml ;-)
+...
+15:42:50	<timbl>	Ok, I reserve judgement and the fish.

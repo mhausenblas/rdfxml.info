@@ -1,0 +1,90 @@
+body {
+	font-family: 'Inconsolata', sans-serif;
+	font-size: 18pt;
+	margin: 0 auto;
+	background: #000;
+	color: #fff;
+	padding: 0;
+	width: 70%;
+	text-align: justify;
+}
+
+h1 {
+	margin: 1em 0 1em 0;
+	font-size: 350%;
+	text-shadow: 1px 1px 7px #d0d0d0;
+}
+
+h2 {
+	margin: 1.5em 0 .5em 0;
+	font-size: 200%;
+	text-shadow: 1px 1px 7px #d0d0d0;
+	color: #ff0040;
+}
+
+a {
+	color: #a0a0a0;
+}
+
+footer {
+	margin: 5em 0 0 0;
+	font-size: 60%;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.person {
+	text-align: right;
+	width: 90%;
+}
+
+.person img {
+	-moz-box-shadow: 1px 1px 6px #f0f0f0;
+	-webkit-box-shadow: 1px 1px 6px #f0f0f0;
+	box-shadow: 1px 1px 6px #f0f0f0;
+}
+
+.quote {
+	position: relative;
+	width: 80%;
+	padding: 15px 25px 20px;
+	margin: 50px auto;
+	color: #fff;
+	background: #245991;
+	font-size: 120%;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	
+}
+
+.quote:after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	right: 35px;
+	border-width: 50px 30px 0 0;
+	border-style: solid;
+	border-color: #245991 transparent;
+	-webkit-transform:skewX(-15deg);
+	-moz-transform:skewX(-15deg);
+	-ms-transform:skewX(-15deg);
+	-o-transform:skewX(-15deg);
+	transform:skewX(-15deg);
+}
+
+.credit {
+	margin: 1em 0 0 45px;
+	font-family: 'Inconsolata', sans-serif;
+	font-size: 70%;
+}
+
+.credit:before {
+	content:"- ";
+}
+
+blockquote p {
+	padding: 0;
+	margin: 0;
+	font-family: 'Covered By Your Grace', cursive;
+}​

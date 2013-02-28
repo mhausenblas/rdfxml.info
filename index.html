@@ -1,237 +1,310 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>RDF/XML sucks</title>
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata" />
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Covered+By+Your+Grace" />
+  <meta charset="utf8">
+	<title>RDF/XML</title>
 	<link rel="stylesheet" href="style.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+$(function() {
+  var more = $('#more').detach();
+  var id = $('#id').detach();
+  var quotes = $(".block").hide();
+  quotes.find('.quote').prepend('<a class="permalink"><small>#</small></a>');
+  var quote;
+  if (window.location.hash) {
+    quote = document.getElementById(window.location.hash.substring(1));
+  }
+  if (!quote) {
+    var random = Math.floor(Math.random() * quotes.length);
+    quote = quotes[random];
+  }
+  $(quote).show();
+  $(quote).find('.person').append(more);
+  $(quote).find('.permalink').attr('href', '#' + quote.id);
+  $('#more').click(function() {
+    window.location.replace(window.location.href.split('#')[0]);
+    return false;
+  });
+});
+  </script>
 </head>
 <body>
-	<h1>RDF/XML sucks</h1>
 	
-	<h2>What's the problem?</h2>
-	<p>
-		The RDF/XML format. Representing RDF in XML sucks and there are many reasons for that, read below. Luckily there is a solution to it as well: <a href="http://www.w3.org/TR/turtle/" title="RDF/Turtle">RDF/Turtle</a>.
-	</p>
+<article>
 
-	<h2>Why does RDF/XML suck?</h2>
-	<p>
-		Here is what some relevant people in the community think:
-	</p>
-	
-	<div id="oral-1" class="quote">
+<h1><a href="http://www.w3.org/TR/turtle">Turtle</a> is a W3C standard and a better alternative to RDF/XML.</h1>
+
+<div id="ora1" class="block">
+	<div class="quote">
+    <a class="permalink" id="ora1">#</a>
 		<blockquote>
-			<p>I think we used to say "It's the Model, stupid" [...] I originally fought hard to make the RDF syntax *not* use XML, because it seemed obvious that most XML tools were not going to be terribly helpful.</p>
+			<p>I think we used to say “It's the Model, stupid” […] I originally fought hard to make the RDF syntax <em>not</em> use XML, because it seemed obvious that most XML tools were not going to be terribly helpful.</p>
 		</blockquote>
-		<p class="credit">Ora Lassila (Co-inventor of RDF), <a href="http://www.thefigtrees.net/lee/blog/2007/01/who_loves_rdfxml.html#comment-16783">Source</a>,  (2007)</p>
+		<p class="credit"><a href="http://www.thefigtrees.net/lee/blog/2007/01/who_loves_rdfxml.html#comment-16783">Ora Lassila, co-inventor of RDF (2007)</a></p>
+	</div>
+	<div class="person">
+    <div id="more"><a class="button" href="#">More quotes…</a></div>
+    <img src="img/oral.jpeg" alt="picture of Ora Lassila" />
+  </div>
+</div>
+
+<div id="ora2" class="block">
+	<div class="quote">
+		<blockquote>
+			<p>I think it was a mistake to use XML as RDF's syntax. It seems to have created more confusion than good. Early on when designing RDF I advocated an s-expression-based syntax, because it would not be as verbose as XML, it would have been easier to write (really), and most importantly, I didn't think there were any real benefits to using XML. It was not meant to be, though, and eventually I got voted down. […] XML syntax for RDF is a political design decision, not a technical one.</p>
+		</blockquote>
+		<p class="credit"><a href="http://www.lassila.org/blog/archive/2005/05/xml_considered.html">Ora Lassila, co-inventor of RDF (2005)</a></p>
 	</div>
 	<div class="person"><img src="img/oral.jpeg" alt="picture of Ora Lassila" /></div>
-	
-	<div id="oral-2" class="quote">
+</div>
+
+<div id="tbray" class="block">
+	<div class="quote">
 		<blockquote>
-			<p>I think it was a mistake to use XML as RDF's syntax. It seems to have created more confusion than good. Early on when designing RDF I advocated an s-expression-based syntax, because it would not be as verbose as XML, it would have been easier to write (really), and most importantly, I didn't think there were any real benefits to using XML. It was not meant to be, though, and eventually I got voted down. [...] XML syntax for RDF is a political design decision, not a technical one.</p>
+			<p>RDF has ignored what I consider to be the central lesson of the World Wide Web, the “View Source” lesson. […] I have never actually managed to write down a chunk of RDF/XML correctly, even when I had the triples laid out quite clearly in my head. Furthermore—once again speaking for myself—I find most existing RDF/XML entirely unreadable. […] I don't think anyone needs to feel particularly bad about this failed experiment.</p>
 		</blockquote>
-		<p class="credit">Ora Lassila (Co-inventor of RDF), <a href="http://www.lassila.org/blog/archive/2005/05/xml_considered.html">Source</a>,  (2005)</p>
-	</div>
-	<div class="person"><img src="img/oral.jpeg" alt="picture of Ora Lassila" /></div>
-		
-	<div id="timb" class="quote">
-		<blockquote>
-			<p>RDF has ignored what I consider to be the central lesson of the World Wide Web, the "View Source" lesson. [...] I have never actually managed to write down a chunk of RDF/XML correctly, even when I had the triples laid out quite clearly in my head. Furthermore - once again speaking for myself - I find most existing RDF/XML entirely unreadable. [...] I don't think anyone needs to feel particularly bad about this failed experiment.</p>
-		</blockquote>
-		<p class="credit">Tim Bray (Co-inventor of XML), <a href="http://www.tbray.org/ongoing/When/200x/2003/05/21/RDFNet">Source</a>,  (2003)</p>
+		<p class="credit"><a href="http://www.tbray.org/ongoing/When/200x/2003/05/21/RDFNet">Tim Bray, co-inventor of XML (2003)</a></p>
 	</div>
 	<div class="person"><img src="img/timb.jpeg" alt="picture of Tim Bray" /></div>
+</div>
 	
-	<div id="daveb" class="quote">
+<div id="dajobe" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>The fundamental problem I think with using XML to write down graphs is: People looking at XML expect they are looking at a hierarchical Tree. So writing a Graph in an XML Tree is just going to always fail the simplicity test.</p>
 		</blockquote>
-		<p class="credit">Dave Beckett (Former editor of RDF/XML), <a href="http://journal.dajobe.org/journal/posts/2010/01/24/rdf-syntaxes-2-0/">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://journal.dajobe.org/journal/posts/2010/01/24/rdf-syntaxes-2-0/">Dave Beckett, former editor of RDF/XML (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/daveb.jpeg" alt="picture of Dave Beckett" /></div>
+</div>
 
-	<div id="andys" class="quote">
+<div id="AndyS" class="block">
+	<div class="quote">
 		<blockquote>
-			<p>Q: What do you dislike about RDF? A: RDF/XML.</p>
+			<p>Q: What do you dislike about RDF?<br>A: RDF/XML.</p>
 		</blockquote>
-		<p class="credit">Andy Seaborne (Co-Editor of SPARQL), <a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Andy Seaborne, co-Editor of SPARQL (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/andys.jpeg" alt="picture of Andy Seaborne" /></div>
+</div>
 	
-	<div id="bobdc" class="quote">
+<div id="bobdc" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>I like to say that there are two categories of people who don't like RDF/XML: RDF people and XML people.</p>
 		</blockquote>
-		<p class="credit">Bob DuCharme (Author of "Learning SPARQL", O'Reilly), <a href="http://answers.semanticweb.com/questions/12308/how-do-i-convince-trainees-to-not-waste-another-second-on-rdfxml?page=1#12311">Source</a>,  (2005)</p>
+		<p class="credit">Bob DuCharme, author of <em>Learning SPARQL</em>, O'Reilly. <a href="http://answers.semanticweb.com/questions/12308/how-do-i-convince-trainees-to-not-waste-another-second-on-rdfxml?page=1#12311">Source</a> (2005)</p>
 	</div>
 	<div class="person"><img src="img/bobdc.jpeg" alt="picture of Bob DuCharme" /></div>
+</div>
 	
-	<div id="richardc" class="quote">
+<div id="cygri" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>RDF/XML combines the efficiency of a text format with the readability of a binary format.</p>
 		</blockquote>
-		<p class="credit">Richard Cyganiak (Co-Editor of RDF Concepts and Abstract Syntax), <a href="http://twitter.com/cygri/statuses/129911047825014784">Source</a>,  (2011)</p>
+		<p class="credit">Richard Cyganiak, co-Editor of <em>RDF Concepts and Abstract Syntax</em>. <a href="http://twitter.com/cygri/statuses/129911047825014784">Source</a> (2011)</p>
 	</div>
 	<div class="person"><img src="img/richardc.jpeg" alt="picture of Richard Cyganiak" /></div>
+</div>
 	
-	<div id="jeremyjc" class="quote">
+<div id="jjc" class="block">
+	<div class="quote">
 		<blockquote>
-			<p>While many syntactic problems have been fixed [in RDF/XML], some of the "postponed issues" indicate the extent of the original mess: e.g. "RDF embedded in XHTML and other XML documents is hard [i.e. impossible] to validate." and "it is not possible to define a subset of RDF/XML that can represent all RDF graphs and can be described by an DTD or an XML Schema".
-			In brief, RDF/XML does not layer RDF on top of XML in a useful way.</p>
+			<p>While many syntactic problems have been fixed [in RDF/XML], some of the “postponed issues” indicate the extent of the original mess: e.g. “RDF embedded in XHTML and other XML documents is hard [i.e. impossible] to validate.” and “it is not possible to define a subset of RDF/XML that can represent all RDF graphs and can be described by an DTD or an XML Schema”.</p>
+			<p>In brief, RDF/XML does not layer RDF on top of XML in a useful way.</p>
 		</blockquote>
-		<p class="credit">Jeremy J. Carroll (Former editor of RDF Concepts and Abstract Syntax), <a href="http://delivery.acm.org/10.1145/1020000/1013501/p412-carroll.pdf">Source</a>,  (2004)</p>
+		<p class="credit">Jeremy J. Carroll, former editor of <em>RDF Concepts and Abstract Syntax</em>. <a href="http://delivery.acm.org/10.1145/1020000/1013501/p412-carroll.pdf">Source</a> (2004)</p>
 	</div>
 	<div class="person"><img src="img/jeremyjc.jpeg" alt="picture of Jeremy J. Carrol" /></div>
+</div>
 
-	<div id="jonathanr" class="quote">
+<div id="jonathanr" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>The world would be a better place if we could deprecate RDF/XML.</p>
 		</blockquote>
-		<p class="credit">Jonathan Rees (W3C Technical Architecture Group), <a href="http://lists.w3.org/Archives/Public/www-tag/2010Sep/0037.html">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://lists.w3.org/Archives/Public/www-tag/2010Sep/0037.html">Jonathan Rees, W3C Technical Architecture Group (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/jonathanr.jpeg" alt="picture of Jonathan Rees" /></div>
+</div>
 
-	<div id="royf" class="quote">
+<div id="fielding" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>If you don't want to get dirty then don't live in a pig's sty. There are plenty of non-XML ways to represent RDF.</p>
 		</blockquote>
-		<p class="credit">Roy Fielding (Editor of HTTP 1.1 and inventor of REST), <a href="http://lists.w3.org/Archives/Public/www-tag/2010Jul/0021.html">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://lists.w3.org/Archives/Public/www-tag/2010Jul/0021.html">Roy Fielding, editor of HTTP 1.1 and inventor of REST (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/royf.jpeg" alt="picture of Roy Fielding" /></div>
+</div>
 
-	<div id="samr" class="quote">
+<div id="samruby" class="block">
+	<div class="quote">
 		<blockquote>
-			<p>I have to believe that at one point, Dave Becket looked at the 1999 RDF Model and Syntax Specification and thought to himself, "I bet I can make this better".</p>
+			<p>I have to believe that at one point, Dave Becket looked at the 1999 RDF Model and Syntax Specification and thought to himself, “I bet I can make this better”.</p>
 		</blockquote>
-		<p class="credit">Sam Ruby (Co-chair of W3C HTML Working Group), <a href="http://intertwingly.net/blog/2003/08/16/RDF-XML-Working-Draft-feedback#c1061086705">Source</a>,  (2003)</p>
+		<p class="credit"><a href="http://intertwingly.net/blog/2003/08/16/RDF-XML-Working-Draft-feedback#c1061086705">Sam Ruby, co-chair of W3C HTML Working Group (2003)</a></p>
 	</div>
 	<div class="person"><img src="img/samr.jpeg" alt="picture of Sam Ruby" /></div>
+</div>
 
-	<div id="manus" class="quote">
+<div id="manu" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>I'd be happy if RDF/XML were burned at the stake.</p>
-			<p>It takes a deep understanding of RDF to understand why it's powerful and that knowledge isn't being distributed in a way that is good and efficient. Part of the blame is probably because of the RDF/XML serialization format - which is often associated as one and the same with RDF.</p>
+			<p>It takes a deep understanding of RDF to understand why it's powerful and that knowledge isn't being distributed in a way that is good and efficient. Part of the blame is probably because of the RDF/XML serialization format—which is often associated as one and the same with RDF.</p>
 		</blockquote>
-		<p class="credit">Manu Sporny (Editor of RDFa), <a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Manu Sporny, editor of RDFa (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/manus.jpeg" alt="picture of Manu Sporny" /></div>
+</div>
 	
-	<div id="ivanh-1" class="quote">
+<div id="ivan1" class="block">
+	<div class="quote">
 		<blockquote>
-			<p>Yes, RDF/XML is ugly because it was developed in the "prehistory" of XML, and now there's too much legacy code to change it. If you prefer, use Turtle.</p>
+			<p>Yes, RDF/XML is ugly because it was developed in the “prehistory” of XML, and now there's too much legacy code to change it. If you prefer, use Turtle.</p>
 		</blockquote>
-		<p class="credit">Ivan Herman (W3C Semantic Web Activity Lead), <a href="http://richard.cyganiak.de/blog/2006/09/bxmlt-ivan-herman-%E2%80%93-questions-and-answers-on-the-semantic-web/">Source</a>,  (2006)</p>
+		<p class="credit"><a href="http://richard.cyganiak.de/blog/2006/09/bxmlt-ivan-herman-%E2%80%93-questions-and-answers-on-the-semantic-web/">Ivan Herman, W3C Semantic Web Activity Lead (2006)</a></p>
 	</div>
 	<div class="person"><img src="img/ivanh.jpeg" alt="picture of Ivan Herman" /></div>
+</div>
 	
-	<div id="ivanh-2" class="quote">
+<div id="ivan2" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>One thing is sure: encoding OWL in RDF/XML is definitely not the way to go.</p>
 		</blockquote>
-		<p class="credit">Ivan Herman (W3C Semantic Web Activity Lead), <a href="http://answers.semanticweb.com/questions/11106/whats-a-good-owl-syntax?page=1#11162">Source</a>,  (2011)</p>
+		<p class="credit"><a href="http://answers.semanticweb.com/questions/11106/whats-a-good-owl-syntax?page=1#11162">Ivan Herman, W3C Semantic Web Activity Lead (2011)</a></p>
 	</div>
 	<div class="person"><img src="img/ivanh.jpeg" alt="picture of Ivan Herman" /></div>
+</div>
 	
-	<div id="michaelh" class="quote">
+<div id="mhausenblas" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>RDF/XML as the standard and default serialization has harmed adoption of RDF since it is difficult to teach and hides the abstract model.</p>
 		</blockquote>
-		<p class="credit">Michael Hausenblas (Co-chair of W3C RDB2RDF Working Group), <a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Michael Hausenblas, co-chair of W3C RDB2RDF Working Group (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/michaelh.jpeg" alt="picture of Michael Hausenblas" /></div>
+</div>
 	
-	<div id="johnfs" class="quote">
+<div id="jfs" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>The original RDF/XML was a disaster for humans and for computers. It is horribly inefficient for computation, and the native XML tools that process it are too slow for critical applications. For that reason, its adoption rate has been glacially slow.</p>
 		</blockquote>
-		<p class="credit">John F. Sowa (Inventor of Conceptual Graphs), <a href="http://ontolog.cim3.net/forum/ontolog-forum/2011-12/msg00025.html">Source</a>,  (2011)</p>
+		<p class="credit"><a href="http://ontolog.cim3.net/forum/ontolog-forum/2011-12/msg00025.html">John F. Sowa, inventor of Conceptual Graphs (2011)</a></p>
 	</div>
 	<div class="person"><img src="img/johnfs.jpeg" alt="picture of John F. Sowa" /></div>
+</div>
 	
-	<div id="jeenb" class="quote">
+<div id="jeenboekstra" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>One of the things (in my experience) that most often puts newcomers off RDF is the unreadable RDF/XML syntax.</p>
 		</blockquote>
-		<p class="credit">Jeen Boekstra (Co-creator of Sesame), <a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Jeen Boekstra, co-creator of Sesame (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/jeenb.jpeg" alt="picture of Jeen Boekstra" /></div>
+</div>
 	
-	<div id="paulah" class="quote">
+<div id="paulah" class="block">
+	<div class="quote">
 		<blockquote>
-			<p>I'm training a group of people on RDF technology. I need to be very efficiently get them up to speed on Turtle, but most important make sure they don't waste any time with RDF/XML [...] Personally when I think of working with RDF/XML I think it's like putting my hand in a toilet.
+			<p>I'm training a group of people on RDF technology. I need to be very efficiently get them up to speed on Turtle, but most important make sure they don't waste any time with RDF/XML […] Personally when I think of working with RDF/XML I think it's like putting my hand in a toilet.
 			</p>
 		</blockquote>
-		<p class="credit">Paul A. Houle (Generation Five), <a href="http://answers.semanticweb.com/questions/12308/how-do-i-convince-trainees-to-not-waste-another-second-on-rdfxml">Source</a>,  (2011)</p>
+		<p class="credit"><a href="http://answers.semanticweb.com/questions/12308/how-do-i-convince-trainees-to-not-waste-another-second-on-rdfxml">Paul A. Houle, Generation Five (2011)</a></p>
 	</div>
 	<div class="person"><img src="img/paulah.jpeg" alt="picture of Paul A. Houle" /></div>
+</div>
 	
-	<div id="scotth" class="quote">
+<div id="scotth" class="block">
+	<div class="quote">
 		<blockquote>
-			<p>In our TQ training series, we stopped using RDF/XML for pedagogical purposes 3-4 years ago. Having to explain <code>rdf:about</code>, <code>rdf:ID</code>, etc. was such a waste of valuable time, and did little to help trainees understand how semantic technology works and can be utilized. We re-centered the training to focus on the RDF model, as @bobdc suggests, and found this to be much more effective. A mantra I use is "Once you understand that it's all about the triples, the rest will become easier." Turtle represents the triples directly. RDF/XML obfuscates the triples (by necessity of fitting a square peg, tree structures, into a triangular hole, RDF triples).</p>
+			<p>In our TQ training series, we stopped using RDF/XML for pedagogical purposes 3-4 years ago. Having to explain <code>rdf:about</code>, <code>rdf:ID</code>, etc. was such a waste of valuable time, and did little to help trainees understand how semantic technology works and can be utilized. We re-centered the training to focus on the RDF model, as @bobdc suggests, and found this to be much more effective. A mantra I use is “Once you understand that it's all about the triples, the rest will become easier.” Turtle represents the triples directly. RDF/XML obfuscates the triples (by necessity of fitting a square peg, tree structures, into a triangular hole, RDF triples).</p>
 		</blockquote>
-		<p class="credit">Scott Henninger (TopQuadrant), <a href="http://answers.semanticweb.com/questions/12308/how-do-i-convince-trainees-to-not-waste-another-second-on-rdfxml">Source</a>,  (2011)</p>
+		<p class="credit"><a href="http://answers.semanticweb.com/questions/12308/how-do-i-convince-trainees-to-not-waste-another-second-on-rdfxml">Scott Henninger, TopQuadrant (2011)</a></p>
 	</div>
 	<div class="person"><img src="img/scotth.jpeg" alt="picture of Scott Henninger" /></div>
+</div>
 
-	<div id="jansa" class="quote">
+<div id="jansa" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>We should get rid of RDF/XML. Turtle and N-Triples are good enough.</p>
 		</blockquote>
-		<p class="credit">Jans Aasman (Franz Inc.), <a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Jans Aasman, Franz Inc (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/jansa.jpeg" alt="picture of Jans Aasman" /></div>
+</div>
 	
-	<div id="benjaminn" class="quote">
+<div id="bengee" class="block">
+	<div class="quote">
 		<blockquote>
-			<p>One of the (IMO) most destructive SemWeb misconceptions is the "RDF = RDF/XML" one.</p>
+			<p>One of the (IMO) most destructive SemWeb misconceptions is the “RDF = RDF/XML” one.</p>
 		</blockquote>
-		<p class="credit">Benjamin Nowack (Creator of ARC2, Talis), <a href="http://lists.w3.org/Archives/Public/public-sweo-ig/2007Jan/0022.html">Source</a>,  (2007)</p>
+		<p class="credit"><a href="http://lists.w3.org/Archives/Public/public-sweo-ig/2007Jan/0022.html">Benjamin Nowack, creator of ARC2 (2007)</a></p>
 	</div>
 	<div class="person"><img src="img/benjaminn.jpeg" alt="picture of Benjamin Nowack" /></div>
+</div>
 
-	<div id="henrys" class="quote">
+<div id="bblfish" class="block">
+	<div class="quote">
 		<blockquote>
-			<p>RDF/XML got people to confuse the syntax with the semantics. [...] Also RDF/XML is just too difficult for people to understand. It would be much better if all formal documents used the Turlte notation (N3 if graphs are required) to explain things together with graph notations. The simplicity of the concepts are just lost in the RDF/XML notation.
+			<p>RDF/XML got people to confuse the syntax with the semantics. […] Also RDF/XML is just too difficult for people to understand. It would be much better if all formal documents used the Turlte notation (N3 if graphs are required) to explain things together with graph notations. The simplicity of the concepts are just lost in the RDF/XML notation.
 			</p>
 		</blockquote>
-		<p class="credit">Henry Story (Inventor of WebID), <a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Henry Story, inventor of WebID (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/henrys.jpeg" alt="picture of Henry Story" /></div>
+</div>
 	
-	<div id="pierre-antoinec" class="quote">
+<div id="pa" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>I found that the XML syntax of RDF is a real hindrance to people understanding and adopting RDF in general. Turtle, on the other hand, is easy to grasp and understand.</p>
 		</blockquote>
-		<p class="credit">Pierre-Antoine Champin (Associate Professor at University Claude Bernard, Lyon), <a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Pierre-Antoine Champin, Associate Professor at University Claude Bernard, Lyon (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/pierre-antoinec.jpeg" alt="picture of Pierre-Antoine Champin" /></div>
+</div>
 
-	<div id="aidanh" class="quote">
+<div id="signified" class="block">
+	<div class="quote">
 		<blockquote>
-			<p>When I started learning RDF, someone told me "start with reading up on XML, and then check out RDF/XML, and write yourself a FOAF file". Worst. Advice. Ever. Took me about a month until I discovered N-Triples/Turtle and realised that RDF had something to do with triples.</p>
+			<p>When I started learning RDF, someone told me “start with reading up on XML, and then check out RDF/XML, and write yourself a FOAF file”. Worst. Advice. Ever. Took me about a month until I discovered N-Triples/Turtle and realised that RDF had something to do with triples.</p>
 		</blockquote>
-		<p class="credit">Aidan Hogan (PostDoc, DERI), <a href="http://answers.semanticweb.com/questions/1837/common-semantic-web-misconceptions-youve-encountered">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://answers.semanticweb.com/questions/1837/common-semantic-web-misconceptions-youve-encountered">Aidan Hogan, Postdoctoral Researcher, DERI (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/aidanh.jpeg" alt="picture of Aidan Hogany" /></div>
+</div>
 	
-	<div id="niklasl" class="quote">
+<div id="niklasl" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>I fear RDF/XML as it stands has too much shortcomings, especially for general adoption (it's basically one of the most alien XML syntaxes people ever see). It should be frozen as it is, and perhaps even be declared a legacy format.</p>
 		</blockquote>
-		<p class="credit">Niklas Lindstr&ouml;m (Valtech), <a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Source</a>,  (2010)</p>
+		<p class="credit"><a href="http://www.w3.org/2002/09/wbs/1/rdf-2010/results">Niklas Lindstr&ouml;m, Valtech (2010)</a></p>
 	</div>
 	<div class="person"><img src="img/niklasl.jpeg" alt="picture of Niklas Lindstrom" /></div>
+</div>
 
-	<div id="alexanderj" class="quote">
+<div id="alexanderj" class="block">
+	<div class="quote">
 		<blockquote>
 			<p>RDF/XML sucks big time, not because machines can't figure it out, but because I can't figure it out.</p>
 		</blockquote>
-		<p class="credit">Alexander Johannesen (Software Engineer), <a href="http://www.dehora.net/journal/2004/03/rdfx_rdf_xml_serialization.html#comment-1171">Source</a>,  (2004)</p>
+		<p class="credit"><a href="http://www.dehora.net/journal/2004/03/rdfx_rdf_xml_serialization.html#comment-1171">Alexander Johannesen, Software Engineer (2004)</a></p>
 	</div>
 	<div class="person"><img src="img/alexanderj.jpeg" alt="picture of Alexander Johannesen" /></div>
+</div>
 	
-	<div id="timbl" class="quote">
+<div id="timbl" class="block">
+	<div class="quote">
 		<blockquote>
 			<code style="display: block; font-size: 80%">
 &lt;mhausenblas&gt; this whole RDF/XML thing threw us back for years, IMHO
@@ -246,14 +319,19 @@
 &lt;timbl&gt;	which I agree with.
 			</code>
 		</blockquote>
-		<p class="credit">Sir Tim Berners-Lee (Inventor of the World Wide Web and Director of W3C), <a href="http://chatlogs.planetrdf.com/swig/2012-02-06.html#T15-19-01-1">Source</a>,  (2012)</p>
+		<p class="credit"><a href="http://chatlogs.planetrdf.com/swig/2012-02-06.html#T15-19-01-1">Sir Tim Berners-Lee, inventor of the World Wide Web and Director of W3C (2012)</a></p>
 	</div>
 	<div class="person"><img src="img/timbl.jpeg" alt="picture of Si Tim Berners-Lee" /></div>
-	
+</div>
+
+  <div class="push"></div>
+</article>
+
 	<footer>
-		Contact: <a href="https://github.com/cygri">Richard Cyganiak</a>, <a href="http://github.com/mhausenblas/">Michael Hausenblas</a> |
-		Last update: 2012-08-02 |
-		<a href="https://github.com/mhausenblas/rdfxml.info">Source</a>
+
+		site by <a href="https://github.com/cygri">cygri</a> and <a href="http://github.com/mhausenblas/">mhausenblas</a> |
+		last update 2013-02-28 |
+		<a href="https://github.com/mhausenblas/rdfxml.info">github</a>
 	</footer>
 </body>
 </html>
